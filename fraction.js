@@ -31,7 +31,7 @@ function gcd(a, b)
 function input_fraction()
 {
     let numerator = parseInt(prompt("enter the numerator of the fraction: "));
-    let denominator = parseInt(prompt("enter the denominator of the fraction: "));
+    let denominator = parseInt(prompt("enter the denominator of the fraction: ")); 
   return new Fraction(numerator,denominator);
 }
 // function main()

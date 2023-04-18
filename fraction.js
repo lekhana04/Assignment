@@ -1,19 +1,20 @@
 const prompt=require('prompt-sync')();
 class Fraction
-  {
-    constructor(numerator,denominator)
-    {
-      this.numerator=numerator;
-      this.denominator=denominator;
-    }
-    sub(f)
-    {
-      let den = this.denominator * f.denominator;
-      let num = this.numerator * f.denominator - f.numerator * this.denominator;
-      let g = gcd(num,den);
-      console.log(g);
-      return new Fraction(num/g,den/g);
-    }
+{
+add(fraction) {
+    const numerator = this.numerator * fraction.denominator + fraction.numerator * this.denominator;
+    const denominator = this.denominator * fraction.denominator;
+    return new Fraction(numerator, denominator);
+  }
+}
+
+function addFractions(fractions) {
+  let result = new Fraction(0, 1);
+  for (let i = 0; i < fractions.length; i++) {
+    result = result.add(fractions[i]);
+  }
+  return result;
+}
   }
 function gcd(a, b)
 {
@@ -38,7 +39,7 @@ function input_fraction()
 // {
 //   let a1,a2,b1,b2;
 //   [a1,b1,a2,b2]=input();
-//   let fraction=sub(a1,b1,a2,b2);
+//   let fraction=add(a1,b1,a2,b2);
 //   console.log("the addition of two fraction is %d/%d",fraction.numerator,fraction.denominator);
 
 function output_result(f1,f2,result)
@@ -50,7 +51,7 @@ function main()
 {
   let f1 = input_fraction();
   let f2 = input_fraction();
-  let f3 = f1.sub(f2)
+  let f3 = f1.add(f2)
   output_result(f1,f2,f3);
 }
 

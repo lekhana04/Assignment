@@ -44,6 +44,7 @@ function input_fraction()
 function output_result(f1,f2,result)
 {
   console.log("%d/%d + %d/%d is %d/%d", f1.numerator,f1.denominator, f2.numerator, f2.denominator, result.numerator, result.denominator);
+  
 }
 
 function main()
